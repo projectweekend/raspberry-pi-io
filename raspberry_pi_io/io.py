@@ -42,7 +42,7 @@ class IOService(object):
 
         self.consumer = AsyncConsumer(
             rabbit_url=self.device_config['rabbitURL'],
-            queue='',
+            queue=self.config['device_id'],
             exchange='raspberry-pi-io',
             exchange_type='direct',
             routing_key=self.config['device_id'],
