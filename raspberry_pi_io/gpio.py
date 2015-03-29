@@ -23,7 +23,7 @@ class PinManager(object):
                 self._gpio.setup(item['pin'], mode, initial=initial, pull_up_down=resistor)
             else:
                 self._gpio.setup(item['pin'], mode, initial=initial)
-            # TODO: add event and handler function support
+            # TODO: add event with handler function support
 
     def read(self, pin_number):
         return self._gpio.input(pin_number)
