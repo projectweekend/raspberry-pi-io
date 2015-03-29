@@ -1,11 +1,11 @@
 import requests
 
 
-class InvalidPinConfigResponse(Exception):
+class InvalidDeviceConfigResponse(Exception):
     pass
 
 
-class PinConfig(object):
+class DeviceConfig(object):
 
     def __init__(self, api, user_email, user_key, device_id):
         self.url = "{0}/pin-config".format(api)
@@ -18,5 +18,5 @@ class PinConfig(object):
     def get(self):
         r = requests.get(self.url, headers=self.headers)
         if r.status_code != 200:
-            raise InvalidPinConfigResponse("Pin Config request not successful")
+            raise InvalidDeviceConfigResponse("Pin Config request not successful")
         return r.json()
