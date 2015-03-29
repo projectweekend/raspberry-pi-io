@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='Raspberry-Pi-IO',
-    version='0.0.1',
+    version='0.0.2',
     author='Brian Hines',
     author_email='brian@projectweekend.net',
     packages=['raspberry_pi_io'],
