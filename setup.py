@@ -12,5 +12,6 @@ setup(
     long_description=open('README.txt').read(),
     install_requires=[
         "pika == 0.9.14",
+        "requests == 2.6.0",
     ],
 )
