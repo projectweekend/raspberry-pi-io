@@ -32,10 +32,10 @@ class PinManager(object):
         self._gpio.output(pin_number, value)
 
     def on(self, pin_number):
-        self.write(pin_number, 1)
+        return self.write(pin_number, 1)
 
     def off(self, pin_number):
-        self.write(pin_number, 0)
+        return self.write(pin_number, 0)
 
     def cleanup(self, pin_number=None):
         if pin_number:
