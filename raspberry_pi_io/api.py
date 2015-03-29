@@ -18,5 +18,9 @@ class DeviceConfig(object):
     def get(self):
         r = requests.get(self.url, headers=self.headers)
         if r.status_code != 200:
-            raise InvalidDeviceConfigResponse("Pin Config request not successful")
+            if r.status_code == 403:
+                raise InvalidDeviceConfigResponse("Not authorized")
+            if r.status_code == 401:
+                raise InvalidDeviceConfigResponse("Authentication failed")
+            raise InvalidDeviceConfigResponse("Pin Config request failed")
         return r.json()
